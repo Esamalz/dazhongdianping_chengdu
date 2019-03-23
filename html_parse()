@@ -3,16 +3,23 @@ from bs4 import BeautifulSoup
 def html_parse():
   for url in all_page():
     soup=BeautifulSoup(get_html(url),'lxml')
-    #获取店铺名称
+    
+    #a获取店铺名称
     allname=soup.find_all('div',class_='tit')
     names=[a.find('a')['title'] for a in allname]
-    #获取评分
+    
+    #b获取评分
     allcomment=soup.find_all('div',class_='comment')
     comments=[b.find('span')['title'] for b in allcomment]
-    #获取人均消费 暂时不会写
     
-    #获取
-      
-      
+    #c获取人均消费 暂时不会写
+    
+    #d获取地址 暂时不会写
+    
+    #e获取推荐菜
+    allrecommend=soup.find_all('div',class_='recommend')
+    recommends=[e.find('a')['recommend-click'] for e in allrecommend]
+    
+     
         
       
