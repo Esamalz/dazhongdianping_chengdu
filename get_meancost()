@@ -1,0 +1,7 @@
+def get_meancost():
+   allmeancost=soup.select('div>a')#这里的写法需要再考虑一下
+    meancosts=[]
+    for c in allmeancost:
+      cost=c.find('b')
+      cost_text=[d.find('b>span') for d in cost] if cost else '无'
+      meancosts.append(cost_text)
