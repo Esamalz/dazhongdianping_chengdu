@@ -1,0 +1,6 @@
+import requests
+
+def get_html(url):
+  #此处设置服务器
+  resp=requests.get(url).text
+  return resp
