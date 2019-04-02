@@ -1,24 +1,30 @@
 from bs4 import BeautifulSoup
 
 def html_parse():
-  for url in all_page():
-    soup=BeautifulSoup(get_html(url),'lxml')
+   for url in allpages():
+      soup=BeautifulSoup(get_html(url),'lxml')
+      
+      #获取店铺名
+      allname=soup.find_all('div',class_='tit')
+      names=[a.find('h4')for a in allname]
+      for b in names:
+         name=b.get_text()
     
-    #a获取店铺名称
-    allname=soup.find_all('div',class_='tit')
-    names=[a.find('a')['title'] for a in allname]
+      #b获取评分
+      allcomment=soup.find_all('div',class_='comment')
+      comments=[b.find('span')['title'] for b in allcomment]
     
-    #b获取评分
-    allcomment=soup.find_all('div',class_='comment')
-    comments=[b.find('span')['title'] for b in allcomment]
+      #c获取人均消费 暂时不会写
     
-    #c获取人均消费 暂时不会写
+      #d获取地址 暂时不会写
     
-    #d获取地址 暂时不会写
-    
-    #e获取推荐菜
-    allrecommend=soup.find_all('div',class_='recommend')
-    recommends=[e.find('a')['recommend-click'] for e in allrecommend]
+      #e获取推荐菜
+      allrecommend=soup.find_all('div',class_='recommend')
+      recommends=[e.find('a')['recommend-click'] for e in allrecommend]
+      
+      #打印店铺名、
+      for result in zip(name,):
+            result=str(name)
     
      
         
