@@ -1,0 +1,11 @@
+#抓取店铺的网页标签
+div class=tag-addr
+a data_shopid
+将shopid添加到网页后
+遍历各个商铺
+寻找标签 div class=map
+img中的经纬度信息
+#获取经纬度信息
+
+#获取店铺地址
+反爬虫手段
